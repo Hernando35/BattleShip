@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/web/style/game.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Ship Locations</title>
+</head>
+<body class="daddyContainer">
+
+<p>Today is <span id="today"></span> &mdash; What's new?
+</p>
+<script type="text/javascript">
+    document.getElementById("today").appendChild(document.createTextNode(new Date().toLocaleString()))
+</script>
+<div class="jumbotron" id="jumbo">
+    <div id="greetingsLogOutBox" class="greetingsLogOutBox">
+        <form id="backToGames">
+            <button id="redirectToGames" type="button" class="btn btn-primary">Back to games</button>
+        </form>
+        <form id="logout">
+            <button id="out" type="button" class="btn btn-primary">Log Out</button>
+        </form>
+    </div>
+    <div id="infoBox" class="infoBox">
+        <p id="player"> You </p>
+        <h2> VS </h2>
+        <p id="opponent"> Opponent</p>
+        <p id="message"></p>
+    </div>
+    <div id="shootingControls" class = "shootingControls">
+        <form>
+            <button id="submitShots" type="button" class="btn btn-default">Submit shots</button>
+        </form>
+    </div>
+    <div id="placingShipsControls" class="placingShipsControls">
+        <div>
+            <input id="vertical" type="checkbox"> <label for="vertical" id="label">Place Vertically</label>
+        </div>
+        <form>
+            <button id="submitShips" type="button" class="btn btn-default">Ships Ready!</button>
+        </form>
+        <form>
+            <button id="boardClear" type="button" class="btn btn-default">Clear the board.</button>
+        </form>
+    </div>
+
+</div>
+<div id="maps" class="maps">
+    <table id="yourShipsGrid" class="yourShipsGrid"></table>
+    <div>
+        <table id="salvosMap" class="salvosMap"></table>
+    </div>
+    <div id="panelInfo" class="app-text-center"></div>
+       <div id="shipsTable" class="shipsTable">
+           <h1> Ships </h1>
+           <table id="choice">
+            <tr id="hunter" class="hunter-ship">
+                <td data-length ="5" class="hunter-1"></td>
+                <td data-length ="5" class="hunter-2"></td>
+                <td data-length ="5" class="hunter-3"></td>
+                <td data-length ="5" class="hunter-4"></td>
+                <td data-length ="5" class="hunter-5"></td>
+            </tr>
+            <tr id="saveNavy" class="saveNavy-ship">
+                <td data-length="4" class="saveNavy-1"></td>
+                <td data-length="4" class="saveNavy-2"></td>
+                <td data-length="4" class="saveNavy-3"></td>
+                <td data-length="4" class="saveNavy-4"></td>
+            </tr>
+            <tr id="bigBoy" class="bigBoy-ship">
+                <td data-length="3" class="bigBoy-1"></td>
+                <td data-length="3" class="bigBoy-2"></td>
+                <td data-length="3" class="bigBoy-3"></td>
+            </tr>
+            <tr id="submarine" class="submarine-ship">
+                <td data-length="3" class="submarine-1"></td>
+                <td data-length="3" class="submarine-2"></td>
+                <td data-length="3" class="submarine-3"></td>
+
+            </tr>
+            <tr id="depredator" class="depredator-ship">
+                <td data-length="3" class="depredator-1"></td>
+                <td data-length="3" class="depredator-2"></td>
+                <td data-length="3" class="depredator-3"></td>
+            </tr>
+        </table>
+    </div>
+    <div id="history" class="historyGrid">
+        <table>
+            <tr>
+                <th rowspan="2">Turn</th>
+                <th colspan="3">Hits By Me</th>
+            </tr>
+            <tr>
+                <td>Ship Type Sunk</td>
+                <td>Hits</td>
+                <td>Ships Left</td>
+            </tr>
+            <tbody id="output"></tbody>
+        </table>
+        <p class="versus"> VS </p>
+        <table>
+            <tr>
+                <th rowspan="2">Turn</th>
+                <th colspan="3">Hits By The Enemy</th>
+            </tr>
+            <tr>
+                <td>Ship Type Sunk</td>
+                <td>Hits</td>
+                <td>Ships Left</td>
+            </tr>
+            <tbody id="output2"></tbody>
+        </table>
+    </div>
+</div>
+<script type="text/html" id="myTemplate">
+    <tr>
+        <td>{{turn}}</td>
+        <td>{{sunk}}</td>
+        <td>{{hit}}</td>
+        <td>{{left}}</td>
+    </tr>
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="/web/script/game.js"></script>
+</body>
+</html>

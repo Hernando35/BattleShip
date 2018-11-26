@@ -1,0 +1,817 @@
+html{
+    background-color: darkkhaki;
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    min-width: 1050px;
+    min-height: 1050px;
+}
+
+.grid {
+    margin:0;
+    padding:0;
+    border:2px;
+    outline:1px solid #000;
+    display:inline-block;
+}
+
+.daddyContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url(https://image.ibb.co/fktyYV/battle-ship.jpg);
+    -webkit-filter: grayscale(10%);
+}
+
+.app-text-center {
+    flex: border-box;
+    text-align: center;
+    border-radius: 5px;
+    flex-direction: initial;
+    background-color: yellow;
+    -webkit-text-fill-color: red;
+    font-size: 40px;
+    margin-left: 30px;
+    position: fixed;
+}
+
+
+.gridCell {
+    background-color: antiquewhite;
+    position: relative;
+}
+
+
+
+#submitShips,
+#boardClear{
+    width: 150px;
+    margin-bottom: 5px;
+}
+
+:root {
+    --borderBottom: 30px;
+}
+
+
+
+.jumbotron {
+    background-position: center;
+    height: 400px;
+}
+
+#jumbo {
+    padding: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.greetingsLogOutBox {
+    margin-top: 1%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.btn-primary {
+    margin-top: 5px;
+}
+
+.infoBox {
+    border-radius: 6px;
+    min-height: 60px;
+    margin-bottom: var(--borderBottom);
+    background-color: #201F1D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #007bff;
+    font-family: cursive;
+    font-size: 20px;
+
+
+}
+
+#infoPlayers {
+    display: flex;
+    justify-content: center;
+    border: 1px solid;
+}
+
+#output{
+    min-width: 300px;
+}
+
+
+.maps{
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    }
+
+.yourShipsGrid {
+    align-self: flex-start;
+    margin-left: 5%;
+    border-radius: 4px;
+}
+
+.shipsTable {
+    align-self: flex-start;
+    flex-grow: 3;
+    border-radius: 4px;
+    margin-left: 7%;
+    margin-right: 1%;
+    margin-top: 5%;
+    max-width: 450px;
+    max-height: 520px;
+    border: 1px solid whitesmoke;
+    color: greenyellow;
+    text-align: center;
+    background-image: url(images/sea.png);
+    filter: brightness(100%);
+    border-collapse: inherit;
+}
+
+.salvosMap     {
+    align-self: flex-start;
+    margin-left: 5%;
+    flex-grow: 2;
+    margin-right: 5%;
+}
+
+.historyGrid  {
+    align-self: flex-start;
+    border-radius: 4px;
+    margin-left: 2%;
+    margin-top: 5%;
+    margin-right: 5%;
+    flex-grow: inherit;
+    border: 1px solid whitesmoke;
+    background-color: #0c1a1e;
+    min-width: 400px;
+}
+
+.historyGrid td {
+    width: 125px;
+}
+
+.placingShipsControls {
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 6px;
+    background-color: #d0d0d0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(https://image.ibb.co/k0QyiV/battleship.jpg);
+    color: #007bff;
+}
+
+#shipsToPlace{
+    margin-left: 100px;
+    min-width: 200px;
+    border-radius: 6px;
+    background-color: #d0d0d0;
+}
+
+#submitShips,
+#boardClear{
+    width: 150px;
+    margin-bottom: 5px;
+}
+
+#submitShots {
+    height: 80px;
+    width: 120px;
+}
+
+#yourShipsGrid td[data-location1="side"] {
+    border: none;
+    text-align: center;
+    background-color: aqua;
+}
+
+#salvosMap td[data-location2="side"] {
+    border: none;
+    text-align: center;
+    background-color: aqua;
+}
+
+
+.yourShipsGrid td {
+    width: 32px;
+    height: 32px;
+}
+
+#salvosMap td {
+    width: 35px;
+    height: 32px;
+}
+.shipsTable td{
+    width: 85px;
+    height: 86px;
+    text-align: center;
+    background: url(images/sea.png);
+    filter: brightness(90%);
+    border: 0 solid black;
+    border-style: hidden;
+    opacity: 2.0;
+    filter: alpha(opacity=30);
+}
+
+
+tr th, td {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-color: aqua;
+
+}
+
+/*hunter-ship*/
+td.hunter-1  {
+    background-image: url(images/hunter11.png);
+    background-size: cover;
+    max-width: 200px;
+}
+
+td.hunter-2 {
+    background-image: url(images/hunter12.png);
+    background-size: cover;
+    max-width: 200px;
+}
+td.hunter-3  {
+    background-image: url(images/hunter13.png);
+    background-size: cover;
+    max-width: 200px;
+}
+td.hunter-4 {
+    background-image: url(images/hunter14.png);
+    background-size: cover;
+    max-width: 200px;
+}
+td.hunter-5  {
+    background-image: url(images/hunter15.png);
+    background-size: cover;
+    max-width: 200px;
+}
+
+
+/*SaveNavy-ship*/
+td.saveNavy-1 {
+     background-image: url(images/saveNavy1.1.png);
+     background-size: cover;
+     max-width: 160px;
+ }
+td.saveNavy-2 {
+    background-image: url(images/saveNavy1.2.png);
+    background-size: cover;
+    max-width: 120px;
+}
+td.saveNavy-3 {
+    background-image: url(images/saveNavy1.3.png);
+    background-size: cover;
+    max-width: 120px;
+}
+td.saveNavy-4 {
+    background-image: url(images/saveNavy1.5.png);
+    background-size: cover;
+    max-width: 120px;
+}
+
+/*BigBoy ship*/
+td.bigBoy-1 {
+    background-image: url(images/bigBoy15.png);
+    background-size: cover;
+    max-width: 100px;
+}
+td.bigBoy-2 {
+    background-image: url(images/bigBoy12.png);
+    background-size: cover;
+    max-width: 100px;
+}
+td.bigBoy-3 {
+    background-image: url(images/bigBoy13.png);
+    background-size: cover;
+    max-width: 100px;
+}
+
+
+/* Depredator ship*/
+td.depredator-1 {
+    background-image: url(images/depredator1.png);
+    background-size: cover;
+    max-width: 60px;
+}
+td.depredator-2 {
+    background-image: url(images/depredator2.png);
+    background-size: cover;
+    max-width: 60px;
+}
+
+td.depredator-3 {
+    background-image: url(images/depredator3.png);
+    background-size: cover;
+    max-width: 60px;
+}
+
+/*submarine-ship*/
+td.submarine-1 {
+    background-image: url(images/submarine2.3.png);
+    background-size: cover;
+    max-width: 60px;
+}
+
+td.submarine-2 {
+    background-image: url(images/submarine3.3.png);
+    background-size: cover;
+    max-width: 60px;
+}
+
+td.submarine-3 {
+    background-image: url(images/submarine1.3.png);
+    background-size: cover;
+    max-width: 60px;
+}
+
+
+.shootingControls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.versus {
+    margin-left: 47%;
+    margin-right: 10px;
+    color: #007bff;
+}
+
+/*footer*/
+footer {
+    clear: both;
+    border-radius: 6px;
+    margin-top: 100px;
+    background-color: #0c1a1e;
+    min-height: 350px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footerleft {
+    margin-top: 50px;
+    padding: 0 36px;
+}
+
+.logofooter {
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.footerleft p {
+    color: #fff;
+    font-size: 12px !important;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 15px;
+}
+
+.footerleft p i {
+    width: 20px;
+    color: #999;
+}
+
+.paddingtop-bottom {
+    margin-top: 50px;
+}
+
+.footer-ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin-left: 2px;
+}
+
+.footer-ul li {
+    line-height: 29px;
+    font-size: 12px;
+}
+
+.footer-ul li a {
+    color: #a0a3a4;
+    transition: color 0.2s linear 0s, background 0.2s linear 0s;
+}
+
+.footer-ul i {
+    margin-right: 10px;
+}
+
+.footer-ul li a:hover {
+    transition: color 0.2s linear 0s, background 0.2s linear 0s;
+    color: #ff670f;
+}
+
+.social:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.icon-ul {
+    list-style-type: none !important;
+    margin: 0px;
+    padding: 0px;
+}
+
+.icon-ul li {
+    line-height: 75px;
+    width: 100%;
+    float: left;
+}
+
+.icon {
+    float: left;
+    margin-right: 5px;
+}
+
+.copyright {
+    border-radius: 6px;
+    min-height: 40px;
+    background-color: #000000;
+}
+
+.copyright p {
+    text-align: left;
+    color: #FFF;
+    padding: 10px 0;
+    margin-bottom: 0px;
+}
+
+.heading7 {
+    font-size: 21px;
+    font-weight: 700;
+    color: #d9d6d6;
+    margin-bottom: 22px;
+}
+
+.post p {
+    font-size: 12px;
+    color: #FFF;
+    line-height: 20px;
+}
+
+.post p span {
+    display: block;
+    color: #8f8f8f;
+}
+
+.bottom_ul {
+    list-style-type: none;
+    float: right;
+    margin-bottom: 0px;
+}
+
+.bottom_ul li {
+    float: left;
+    line-height: 40px;
+}
+
+.bottom_ul li:after {
+    content: "/";
+    color: #FFF;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.bottom_ul li a {
+    color: #FFF;
+    font-size: 12px;
+}
+
+
+.topLeft {
+    background-color: yellow;
+/*    background-image: url("background/tl.png");*/
+}
+.topCenter {
+    background-color: #e81616;
+    /*
+    background-image: url(background/tc.png);
+    */
+}
+.topRight {
+    background-color: aquamarine;
+    /*
+    background-image: url(background/tr.png);
+    */
+}
+
+
+.middleLeft {
+    background-color: darkorange;
+    /*
+    background-image: url(background/cl.png);
+    */
+}
+.middleCenter {
+    background-color: #ff670f;
+    /*
+    background-image: url(background/cc.png);
+    */
+}
+.middleRight {
+    background-color: deepskyblue;
+    /*
+    background-image: url(background/cr.png);
+    */
+}
+
+
+.bottomLeft {
+    background-color: aquamarine;
+    /*
+    background-image: url(background/bl.png);
+    */
+
+}
+.bottomCenter {
+    background-color: darkgreen;
+    /*
+    background-image: url(background/bc.png);
+    */
+}
+.bottomRight {
+    background-color: blueviolet;
+    /*
+    background-image: url(background/br.png);
+    */
+}
+
+.highlight {
+    background-size: cover;
+    background-color: #7FDBFF
+         }
+
+
+.shipPlaced{
+    max-width: 150px;
+}
+
+/*Hunter-ship*/
+.shipPlaced.hunter.hunter-0-hor {
+    background-image: url(images/hunter11.png);
+    background-size: cover;
+    max-width: 100px;
+}
+.shipPlaced.hunter.hunter-1-hor {
+    background-image: url(images/hunter12.png);
+    background-size: cover;
+    max-width: 100px;
+}
+.shipPlaced.hunter.hunter-2-hor {
+    background-image: url(images/hunter13.png);
+    background-size: cover;
+    max-width: 100px;
+}
+.shipPlaced.hunter.hunter-3-hor {
+    background-image: url(images/hunter14.png);
+    background-size: cover;
+    max-width: 100px;
+}
+.shipPlaced.hunter.hunter-4-hor {
+    background-image: url(images/hunter15.png);
+    background-size: cover;
+    max-width: 100px;
+}
+.shipPlaced.hunter.hunter-0-ver {
+    background-image: url(images/hunter11.png);
+    background-size: cover;
+    transform: rotate(90deg);
+    max-width: 100px;
+}
+.shipPlaced.hunter.hunter-1-ver {
+    background-image: url(images/hunter12.png);
+    background-size: cover;
+    transform: rotate(90deg);
+    max-width: 100px;
+}
+.shipPlaced.hunter.hunter-2-ver {
+    background-image: url(images/hunter13.png);
+    background-size: cover;
+    transform: rotate(90deg);
+    max-width: 100px;
+}
+.shipPlaced.hunter.hunter-3-ver {
+    background-image: url(images/hunter14.png);
+    background-size: cover;
+    transform: rotate(90deg);
+    max-width: 100px;
+}
+.shipPlaced.hunter.hunter-4-hor {
+    background-image: url(images/hunter15.png);
+    background-size: cover;
+    max-width: 100px;
+}
+
+/*SaveNavy-ship*/
+.shipPlaced.saveNavy.saveNavy-0-hor {
+    background-image: url(images/saveNavy1.7.png);
+    background-size: cover;
+    max-width: 100px;
+}
+.shipPlaced.saveNavy.saveNavy-1-hor {
+    background-image: url(images/saveNavy1.6.png);
+    background-size: cover;
+    max-width: 100px;
+}
+.shipPlaced.saveNavy.saveNavy-2-hor {
+    background-image: url(images/saveNavy1.3.png);
+    background-size: cover;
+    max-width: 100px;
+}
+.shipPlaced.saveNavy.saveNavy-3-hor {
+    background-image: url(images/saveNavy1.4.png);
+    background-size: cover;
+    max-width: 100px;
+}
+.shipPlaced.saveNavy.saveNavy-0-ver {
+    background-image: url(images/saveNavy1.7.png);
+    background-size: cover;
+    transform: rotate(90deg);
+    max-width: 100px;
+}
+.shipPlaced.saveNavy.saveNavy-1-ver {
+    background-image: url(images/saveNavy1.6.png);
+    background-size: cover;
+    transform: rotate(90deg);
+    max-width: 100px;
+}
+.shipPlaced.saveNavy.saveNavy-2-ver {
+    background-image: url(images/saveNavy1.3.png);
+    background-size: cover;
+    transform: rotate(90deg);
+    max-width: 100px;
+}
+.shipPlaced.saveNavy.saveNavy-3-ver {
+    background-image: url(images/saveNavy1.4.png);
+    background-size: cover;
+    transform: rotate(90deg);
+    max-width: 100px;
+}
+
+
+
+/*bigboy-ship*/
+.shipPlaced.bigBoy.bigBoy-0-hor {
+    background-image: url(images/bigBoy11.png);
+    background-size: cover;
+    max-width: 150px;
+}
+.shipPlaced.bigBoy.bigBoy-1-hor {
+    background-image: url(images/bigBoy14.png);
+    background-size: cover;
+    max-width: 150px;
+}
+.shipPlaced.bigBoy.bigBoy-2-hor {
+    background-image: url(images/bigBoy16.png);
+    background-size: cover;
+    max-width: 150px;
+}
+.shipPlaced.bigBoy.bigBoy-0-ver {
+    background-image: url(images/bigBoy11.png);
+    background-size: cover;
+    transform: rotate(90deg);
+    max-width: 150px;
+}
+.shipPlaced.bigBoy.bigBoy-1-ver {
+    background-image: url(images/bigBoy14.png);
+    background-size: cover;
+    transform: rotate(90deg);
+    max-width: 150px;
+}
+.shipPlaced.bigBoy.bigBoy-2-ver {
+    background-image: url(images/bigBoy16.png);
+    background-size: cover;
+    transform: rotate(90deg);
+    max-width: 150px;
+}
+
+
+/*Depredator Ship*/
+.shipPlaced.depredator.depredator-0-hor {
+    background-image: url(images/depredator1.png);
+    background-size: cover;
+    max-width: 120px;
+}
+.shipPlaced.depredator.depredator-1-hor {
+    background-image: url(images/depredator2.png);
+    background-size: cover;
+    max-width: 120px;
+}
+.shipPlaced.depredator.depredator-2-hor {
+    background-image: url(images/depredator3.png);
+    background-size: cover;
+    max-width: 120px;
+}
+.shipPlaced.depredator.depredator-0-ver {
+    background-image: url(images/depredator1.png);
+    transform: rotate(90deg);
+    background-size: cover;
+    max-width: 120px;
+}
+.shipPlaced.depredator.depredator-1-ver {
+    background-image: url(images/depredator2.png);
+    transform: rotate(90deg);
+    background-size: cover;
+    max-width: 120px;
+}
+.shipPlaced.depredator.depredator-2-ver {
+    background-image: url(images/depredator3.png);
+    transform: rotate(90deg);
+    background-size: cover;
+    max-width: 120px;
+}
+
+
+/*Submarine ship*/
+.shipPlaced.submarine.submarine-0-hor {
+    background-image: url(images/submarine2.3.png);
+    background-size: cover;
+    max-width: 120px;
+}
+.shipPlaced.submarine.submarine-1-hor {
+    background-image: url(images/submarine3.3.png);
+    background-size: cover;
+    max-width: 120px;
+}
+.shipPlaced.submarine.submarine-2-hor {
+    background-image: url(images/submarine1.3.png);
+    background-size: cover;
+    max-width: 120px;
+}
+.shipPlaced.submarine.submarine-0-ver {
+    background-image: url(images/submarine2.3.png);
+    transform: rotate(90deg);
+    background-size: cover;
+    max-width: 120px;
+}
+.shipPlaced.submarine.submarine-1-ver {
+    background-image: url(images/submarine3.3.png);
+    transform: rotate(90deg);
+    background-size: cover;
+    max-width: 120px;
+}
+.shipPlaced.submarine.submarine-2-ver {
+    background-image: url(images/submarine1.3.png);
+    transform: rotate(90deg);
+    background-size: cover;
+    max-width: 120px;
+}
+
+
+
+
+.bombed {
+    background-image: url(images/fire.icon.svg);
+    border-radius: 1px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.bombedDuck {
+    /*
+    background-image: url(background/Golden_Cascade_Duck.png);
+    */
+    background-color: #e81616;
+    background-size: cover;
+}
+
+.toBomb {
+    background-color: #8dd8ff;
+    background-size: cover;
+}
+
+.overlap {
+    background-color: crimson;
+    /*
+    background-image: url(background/red.png);
+    */
+}
+
+@media (min-width: 600px) and (max-width: 800px) and (orientation: landscape) {
+    #yourShipsGrid {
+        display: none; }
+
+    #salvosMap {
+        display: none;
+    }
+
+}
+
+/*Source: - https://www.flaticon.com/search/2?word=ships&style_id=6*;
+           - http://mariafresa.net/single/1894921.html;
+ */
